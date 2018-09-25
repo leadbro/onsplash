@@ -1,9 +1,59 @@
 <template>
-  <div>
+  <div id="app">
+    <app-header/>
     <nuxt/>
   </div>
 </template>
 
-<style>
+<script>
+  import AppHeader from '~/components/AppHeader';
+
+  export default {
+
+    components: {
+      AppHeader
+    }
+  }
+
+</script>
+
+<style lang="less">
+  @import "../assets/mixins.less";
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-green: #81C784;
+    --color-orange: #FF7043;
+    --color-purple: #3F51B5;
+
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-cabin: 'Cabin', sans-serif;
+  }
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    font-size: 10px;
+    position: relative;
+  }
+
+  body {
+    font-family: var(--font-open-sans);
+    font-size: 1.6rem;
+    width: 100%;
+  }
+
+  #app {
+    padding: 1.6rem;
+  }
 
 </style>
