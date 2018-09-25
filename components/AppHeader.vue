@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="header__container">
+    <div class="header__container container">
       <app-logo class="header__icon"/>
       <header-menu class="header__menu"/>
     </div>
@@ -24,14 +24,19 @@
   @import "../assets/mixins.less";
 
   .header {
+    padding: 2rem;
 
     &__container {
       display: flex;
       align-items: center;
     }
 
+    &__menu {
+      margin-left: auto;
+    }
+
     &__icon {
-      margin-right: 2rem;
+
     }
   }
 

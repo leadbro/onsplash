@@ -17,7 +17,7 @@
   .header-menu {
 
     &__item {
-      color: var(--color-purple);
+      color: #000;
       text-decoration: none;
 
       margin-right: 1rem;

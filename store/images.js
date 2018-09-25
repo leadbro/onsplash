@@ -1,20 +1,34 @@
 export const state = () => ({
-  
+  items: []
 });
 
 export const getters = {
-  getFewPictures: () => count => {
+  getPictures(state)  {
+    return state.items
+  }
+};
+
+export const mutations = {
+  set(state, items) {
+    state.items = items;
+  }
+};
+
+export const actions = {
+  getRandomImages({commit}, count) {
     let items = [];
 
-    for (let id = 0; id <= count; id++) {
+    for (let i = 0; i <= 10; i++) {
+      let id = Math.floor(Math.random() * 500);
+
       items.push({
         id,
-        imageSrc: 'https://lorempixel.com/480/320/abstract/' + id,
-        link: 'https://softex-lab.com'
+        imageSrc: 'https://picsum.photos/600/200?image=' + id,
+        link: 'https://example.com/'
       })
     }
 
-    return items;
+    commit('set', items);
   }
 };
 

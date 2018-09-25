@@ -41,9 +41,18 @@
     margin: 0;
   }
 
+  html,
+  body,
+  #__nuxt,
+  #__layout,
+  #app {
+    min-height: 100%;
+  }
+
   html {
     font-size: 10px;
     position: relative;
+    height: 100%;
   }
 
   body {
@@ -53,7 +62,13 @@
   }
 
   #app {
-    padding: 1.6rem;
+
+  }
+
+  .container {
+    margin: 0 auto;
+    width: calc(~'100% - 3rem');
+    max-width: 96rem;
   }
 
 </style>
