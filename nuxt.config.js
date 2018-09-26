@@ -18,7 +18,7 @@ module.exports = {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Cabin|Open+Sans"
+          "https://fonts.googleapis.com/css?family=Cabin|Open+Sans|Roboto"
       },
     ]
   },
@@ -38,6 +38,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/vue-lazyload', ssr: false }
   ],
 
   /*

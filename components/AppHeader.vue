@@ -24,7 +24,11 @@
   @import "../assets/mixins.less";
 
   .header {
-    padding: 2rem;
+    background-color: #fff;
+    padding: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     &__container {
       display: flex;

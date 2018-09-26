@@ -8,7 +8,7 @@
 
 
 export default {
-
+  transition: 'bounce',
   components: {
 
   }

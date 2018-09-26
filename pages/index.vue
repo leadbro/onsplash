@@ -51,6 +51,7 @@ export default {
       }
     }
   },
+  transition: 'bounce',
   components: {
     AppBanner
   },
@@ -64,14 +65,25 @@ export default {
 
 
   .page-index {
+    padding-bottom: 6rem;
 
     &__title {
       font-size: 4rem;
-      font-family: var(--font-cabin);
+      font-family: var(--font-roboto);
+
+      margin-top: 4.2rem;
+      margin-bottom: 1.8rem;
     }
 
     &__text {
-      font-size: 3rem;
+      font-size: 2rem;
+
+      p {
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
   }
 </style>

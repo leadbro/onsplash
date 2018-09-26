@@ -33,6 +33,7 @@
 
     --font-open-sans: 'Open Sans', sans-serif;
     --font-cabin: 'Cabin', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
   }
 
   html,
@@ -53,6 +54,7 @@
     font-size: 10px;
     position: relative;
     height: 100%;
+    overflow-y: scroll;
   }
 
   body {
@@ -71,4 +73,22 @@
     max-width: 96rem;
   }
 
+  .bounce-enter-active {
+    animation: bounce-in .8s;
+  }
+  .bounce-leave-active {
+    animation: bounce-out .5s;
+  }
+  @keyframes bounce-in {
+    0% {
+      opacity: .9
+    }
+    100% {
+      opacity: 1
+    }
+  }
+  @keyframes bounce-out {
+    0% {  opacity: 1 }
+    100% { opacity: .9 }
+  }
 </style>

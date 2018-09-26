@@ -24,7 +24,7 @@ export const actions = {
   getRandomImages({commit}, count) {
     let items = [];
 
-    for (let i = 0; i <= 10;) {
+    for (let i = 0; i < 10;) {
       let id = Math.floor(Math.random() * 1000);
 
       let isAlreadyExist = items.filter(item => item.id === id).length > 0;
@@ -33,8 +33,8 @@ export const actions = {
 
       items.push({
         id,
-        imageSrc: 'https://picsum.photos/600/600?image=' + id,
-        link: 'https://example.com/',
+        imageSrc: 'https://picsum.photos/300/205?image=' + id,
+        link: 'https://picsum.photos/1920/1080?image=' + id,
         isShowed: false
       });
 

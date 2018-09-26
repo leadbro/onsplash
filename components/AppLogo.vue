@@ -26,12 +26,12 @@
     position: relative;
 
     &__icon {
-      margin-right: 1rem;
+      margin-right: .6rem;
     }
 
     &__text {
-      font-family: var(--font-cabin);
-      font-size: 2.5rem;
+      font-family: var(--font-roboto);
+      font-size: 2rem;
     }
 
     &__link {

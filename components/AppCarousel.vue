@@ -5,7 +5,7 @@
         <div class="swiper-wrapper">
           <figure
               class="carousel__item swiper-slide"
-              v-for="(slide, index) in slides"
+              v-for="slide in slides"
               :key="slide.id"
           >
             <a
@@ -16,10 +16,8 @@
 
             <img
                 class="carousel__image"
-                :src="slide.imageSrc"
+                v-lazy="slide.imageSrc"
                 :alt="slide.link"
-                @load="onloadImage(slide.id)"
-                @error="onErrorImage(slide.id)"
             />
           </figure>
         </div>
@@ -37,7 +35,11 @@
   export default {
     data() {
       return {
-        $swiper: {}
+        $swiper: {},
+        lazyOptions: {
+          selector: 'img',
+          error: 'https://picsum.photos/300/205/?random'
+        }
       }
     },
     props: {
@@ -82,13 +84,15 @@
       },
     },
     methods: {
-      onloadImage() {
-        event.target.classList.add('carousel__image--loaded');
-      },
-      onErrorImage() {
-        /* Если изображения нет, подгружаем случайное существующее */
-        event.target.src = 'https://picsum.photos/600/200/?random';
-      }
+      // onloadImage() {
+      //   return new Promise((resolve, reject) => {
+      //     event.target.classList.add('carousel__image--loaded');
+      //   });
+      // },
+      // onErrorImage() {
+      //   /* Если изображения нет, подгружаем случайное существующее */
+      //   event.target.src = 'https://picsum.photos/600/200/?random';
+      // }
     },
     mounted() {
       this.$swiper = new Swiper('.swiper-container', this.swiperOptions);
@@ -143,7 +147,8 @@
       opacity: 0;
       transition: opacity .5s;
 
-      &--loaded {
+      &[lazy=loaded],
+      &[lazy=error]{
         opacity: 1;
       }
     }
