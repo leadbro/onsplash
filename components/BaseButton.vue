@@ -74,14 +74,14 @@
     }
 
     &:active {
-      background-color: rgba(0, 0, 0, .6) !important;
+      background-color: rgba(0, 0, 0, .4) !important;
       transition: background-color .2s;
     }
 
     &:hover,
     &:focus {
       background-color: rgba(0, 0, 0, .2);
-
+      transition: background-color .5s;
     }
 
     &:active &__border rect {

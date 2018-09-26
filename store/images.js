@@ -1,10 +1,14 @@
 export const state = () => ({
-  items: []
+  items: [],
+  bannerImage: 'https://picsum.photos/1900/642/?random'
 });
 
 export const getters = {
   getPictures(state)  {
     return state.items
+  },
+  getBanner(state) {
+    return state.bannerImage
   }
 };
 

@@ -70,7 +70,7 @@
   .container {
     margin: 0 auto;
     width: calc(~'100% - 3rem');
-    max-width: 96rem;
+    max-width: 94rem;
   }
 
   .bounce-enter-active {
