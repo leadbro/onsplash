@@ -62,21 +62,36 @@ export default {
 </script>
 
 <style lang="less">
-
+@import "../assets/mixins.less";
 
   .page-index {
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
+
+    @media @min1024 {
+      padding-bottom: 6rem;
+    }
 
     &__title {
-      font-size: 4rem;
+      font-size: 3rem;
       font-family: var(--font-roboto);
 
-      margin-top: 4.2rem;
-      margin-bottom: 1.8rem;
+      margin-right: 3rem;
+      margin-bottom: 1.5rem;
+
+      @media @min1024 {
+        font-size: 4rem;
+
+        margin-top: 4.2rem;
+        margin-bottom: 1.8rem;
+      }
     }
 
     &__text {
-      font-size: 2rem;
+      font-size: 1.5rem;
+
+      @media @min768 {
+        font-size: 18px;
+      }
 
       p {
 

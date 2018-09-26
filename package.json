@@ -1,7 +1,7 @@
 {
-  "name": "softex-lab",
+  "name": "Onsplash",
   "version": "1.0.0",
-  "description": "Test task",
+  "description": "Random Unsplash images",
   "author": "Alexey Andreev",
   "private": true,
   "scripts": {

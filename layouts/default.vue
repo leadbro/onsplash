@@ -2,16 +2,22 @@
   <div id="app">
     <app-header/>
     <nuxt/>
+    <div class="footer">
+      <logo-icon class="logo-bottom"/>
+    </div>
   </div>
 </template>
 
 <script>
   import AppHeader from '~/components/AppHeader';
+  import LogoIcon from '~/components/AppLogoIcon';
+
 
   export default {
 
     components: {
-      AppHeader
+      AppHeader,
+      LogoIcon
     }
   }
 
@@ -34,6 +40,7 @@
     --font-open-sans: 'Open Sans', sans-serif;
     --font-cabin: 'Cabin', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
+    --font-base: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
   }
 
   html,
@@ -67,10 +74,28 @@
 
   }
 
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+    @media @min1024 {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .logo-bottom {
+    --icon-size: 3rem;
+  }
+
   .container {
     margin: 0 auto;
-    width: calc(~'100% - 3rem');
-    max-width: 94rem;
+    width: calc(~'100% - 1.5rem');
+
+    @media @min768 {
+      max-width: 94rem;
+      width: calc(~'100% - 3rem');
+    }
   }
 
   .bounce-enter-active {
@@ -79,6 +104,7 @@
   .bounce-leave-active {
     animation: bounce-out .5s;
   }
+
   @keyframes bounce-in {
     0% {
       opacity: .9

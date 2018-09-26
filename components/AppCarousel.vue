@@ -144,11 +144,17 @@
     &__button {
       --carousel-button-size: 1.6rem;
 
-      height: var(--carousel-button-size);
-      width: var(--carousel-button-size);
+      display: none;
 
-      position: absolute;
-      top: calc(~'50% - var(--carousel-button-size)/2');
+      @media @min1024 {
+        display: block;
+
+        height: var(--carousel-button-size);
+        width: var(--carousel-button-size);
+
+        position: absolute;
+        top: calc(~'50% - var(--carousel-button-size)/2');
+      }
 
       &--prev {
         left: -3rem;

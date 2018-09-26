@@ -61,30 +61,44 @@
   .banner {
     position: relative;
 
+    &__container {
+      padding: 4.8rem 0 6rem;
+
+      position: relative;
+      z-index: 2;
+
+      @media @min1024 {
+        padding: 10.4rem 0 6rem;
+      }
+    }
+
     &__title {
       color: #fff;
-      font-size: 5rem;
-      font-family: var(--font-roboto);
+      font-size: 4rem;
+      font-family: var(--font-base);
 
       margin-top: 0;
       margin-bottom: 1.6rem;
+
+      @media @min1024 {
+        font-size: 5rem;
+        margin-bottom: 1.8rem;
+      }
     }
 
     &__text {
       color: #fff;
-      font-size: 18px;
       margin-bottom: 2.4rem;
+
+      font-size: 15px;
+
+      @media @min1024 {
+        font-size: 18px;
+      }
 
       p {
         margin: 1rem 0;
       }
-    }
-
-    &__container {
-      padding: 10.4rem 0 6rem;
-
-      position: relative;
-      z-index: 2;
     }
 
     &__button {

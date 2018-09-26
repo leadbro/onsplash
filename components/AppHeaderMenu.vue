@@ -17,31 +17,18 @@
   .header-menu {
 
     &__item {
-      color: #000;
+      color: #999;
+      font-family: var(--font-base);
       text-decoration: none;
 
       margin-right: 1rem;
 
       position: relative;
 
-      &:after {
-        content: '';
-        display: block;
+      transition: color .2s ease-in-out;
 
-        background-color: var(--color-orange);
-
-        height: .1rem;
-        width: 0;
-
-        position: absolute;
-        left: 0;
-        bottom: 0;
-
-        transition: width .3s;
-      }
-
-      &:hover:after {
-        width: 100%;
+      &:hover {
+        color: #111;
       }
     }
   }

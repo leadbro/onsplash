@@ -25,10 +25,14 @@
 
   .header {
     background-color: #fff;
-    padding: 1.2rem;
+    padding: .8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
+
+    @media @min768 {
+      padding: 1.2rem;
+    }
 
     &__container {
       display: flex;
@@ -37,6 +41,11 @@
 
     &__menu {
       margin-left: auto;
+      display: none;
+
+      @media @min768 {
+        display: block;
+      }
     }
 
     &__icon {
