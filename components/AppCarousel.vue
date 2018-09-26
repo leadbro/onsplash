@@ -5,7 +5,7 @@
         <div class="swiper-wrapper">
           <figure
               class="carousel__item swiper-slide"
-              v-for="slide in slides"
+              v-for="(slide, index) in slides"
               :key="slide.id"
           >
             <a
@@ -18,6 +18,8 @@
                 class="carousel__image"
                 :src="slide.imageSrc"
                 :alt="slide.link"
+                @load="onloadImage(slide.id)"
+                @error="onErrorImage(slide.id)"
             />
           </figure>
         </div>
@@ -79,6 +81,15 @@
         }
       },
     },
+    methods: {
+      onloadImage() {
+        event.target.classList.add('carousel__image--loaded');
+      },
+      onErrorImage() {
+        /* Если изображения нет, подгружаем случайное существующее */
+        event.target.src = 'https://picsum.photos/600/200/?random';
+      }
+    },
     mounted() {
       this.$swiper = new Swiper('.swiper-container', this.swiperOptions);
     },
@@ -91,10 +102,50 @@
 
   .carousel {
 
+    &__container {
+
+    }
+
     &__item {
       margin: 0;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.4) 40%,rgba(0,0,0,.4) 70%,rgba(0,0,0,.5));
+      height: 20.5rem;
+
+      &:after {
+        --spinner-size: 4.4rem;
+        --center-postiion: calc(~'50% - var(--spinner-size)/2');
+
+        content: '';
+        display: block;
+        background-image: url('../assets/icons/spinner.svg');
+
+        width: var(--spinner-size);
+        height: var(--spinner-size);
+
+        position: absolute;
+        top: var(--center-postiion);
+        left: var(--center-postiion);
+        z-index: 1;
+      }
+    }
+
+    &__image {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      position: relative;
+      z-index: 2;
+
+      opacity: 0;
+      transition: opacity .5s;
+
+      &--loaded {
+        opacity: 1;
+      }
     }
 
     &__link {
@@ -103,7 +154,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: 2;
+      z-index: 3;
     }
   }
 </style>

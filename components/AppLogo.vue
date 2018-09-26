@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <logo-icon class="logo__icon"/>
-    <div class="logo__text">Unsplasher</div>
+    <div class="logo__text">Onsplash</div>
     <nuxt-link class="logo__link" to="/"></nuxt-link>
   </div>
 </template>

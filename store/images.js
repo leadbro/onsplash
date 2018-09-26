@@ -11,6 +11,12 @@ export const getters = {
 export const mutations = {
   set(state, items) {
     state.items = items;
+  },
+  hideImage(state, slideId) {
+    state.items.find(item => item.id === slideId).isShowed = false;
+  },
+  showImage(state, slideId) {
+    state.items.find(item => item.id === slideId).isShowed = true;
   }
 };
 
@@ -18,14 +24,21 @@ export const actions = {
   getRandomImages({commit}, count) {
     let items = [];
 
-    for (let i = 0; i <= 10; i++) {
-      let id = Math.floor(Math.random() * 500);
+    for (let i = 0; i <= 10;) {
+      let id = Math.floor(Math.random() * 1000);
+
+      let isAlreadyExist = items.filter(item => item.id === id).length > 0;
+
+      if (isAlreadyExist) continue;
 
       items.push({
         id,
-        imageSrc: 'https://picsum.photos/600/200?image=' + id,
-        link: 'https://example.com/'
-      })
+        imageSrc: 'https://picsum.photos/600/600?image=' + id,
+        link: 'https://example.com/',
+        isShowed: false
+      });
+
+      i++;
     }
 
     commit('set', items);
