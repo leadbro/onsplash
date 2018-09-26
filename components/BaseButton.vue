@@ -3,8 +3,9 @@
       class="base-button"
   >
     <slot></slot>
-    <svg class="base-button__border">
-      <rect ></rect>
+    <svg class="base-button__border" xmlns="http://www.w3.org/2000/svg" >
+      <!--<rect height="3.2rem" width="100rem" rx="4" ry="4"></rect>-->
+      <rect x="0" y="0" width="100%" height="32" rx="4" ry="4" />
     </svg>
   </button>
 </template>
@@ -55,16 +56,14 @@
       left: 0;
 
       rect {
-        rx: 4;
-        ry: 4;
         fill: rgba(255,255,255,0);
         stroke: var(--color-orange);
         stroke-width: 3px;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
 
-        height: 100%;
-        width: 100%;
+        /*height: 100%;*/
+        /*width: 100%;*/
 
         animation-name: round;
         animation-duration: 3s;
@@ -82,6 +81,10 @@
     &:focus {
       background-color: rgba(0, 0, 0, .2);
       transition: background-color .5s;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
     }
 
     &:active &__border rect {

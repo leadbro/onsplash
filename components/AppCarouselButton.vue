@@ -69,5 +69,9 @@
         transform: scale(1.5)
       }
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
   }
 </style>
