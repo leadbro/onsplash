@@ -22,6 +22,9 @@ module.exports = {
       },
     ]
   },
+  router: {
+    base: '/<repository-name>/'
+  },
 
   /*
   ** Customize the progress-bar color
