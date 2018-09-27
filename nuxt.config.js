@@ -22,9 +22,6 @@ module.exports = {
       },
     ]
   },
-  router: {
-    base: '/onsplash/'
-  },
 
   /*
   ** Customize the progress-bar color
