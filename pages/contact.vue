@@ -2,18 +2,18 @@
   <div class="page-contacts">
     <div class="container">
       <h1 class="page-contacts__title">Contact Us</h1>
-
+      <contacts-form/>
     </div>
   </div>
 </template>
 
 <script>
-
+import ContactsForm from '~/components/ContactsForm';
 
 export default {
   transition: 'bounce',
   components: {
-
+    ContactsForm
   }
 }
 </script>

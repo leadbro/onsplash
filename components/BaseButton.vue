@@ -1,6 +1,7 @@
 <template>
   <button
       class="base-button"
+      :class="buttonClasses"
   >
     <slot></slot>
     <svg class="base-button__border" xmlns="http://www.w3.org/2000/svg" >
@@ -16,19 +17,62 @@
     data() {
       return {};
     },
+    computed: {
+      buttonClasses() {
+        return {
+          'base-button--white': this.colorScheme === 'white',
+          'base-button--orange': this.colorScheme === 'orange',
+          'base-button--green': this.colorScheme === 'green',
+        }
+      }
+    },
+    props: {
+      colorScheme: {
+        type: String,
+        default: 'white'
+      }
+    }
   };
 </script>
 
 <style lang="less">
 
   .base-button {
+
+    &--white {
+      --color: #fff;
+      --bg-color: rgba(255,255,255,0);
+      --bg-color-active: rgba(0, 0, 0, .4);
+      --bg-color-hover: rgba(0, 0, 0, .2);
+      --border-color: #fff;
+      --rect-stroke: var(--color-orange);
+    }
+
+    &--green {
+      --color: #000;
+      --bg-color: #fff;
+      --bg-color-active:  rgba(129, 199, 132, 0.25);
+      --bg-color-hover: rgba(129, 199, 132, 0.15);
+      --border-color: #000;
+      --rect-stroke: var(--color-green);
+    }
+
+    &--orange {
+      --color: #000;
+      --bg-color: #fff;
+      --bg-color-active: rgba(255, 112, 67, 0.25);
+      --bg-color-hover: rgba(255, 112, 67, 0.15);
+      --border-color: #000;
+      --rect-stroke: var(--color-orange);
+    }
+
     cursor: pointer;
 
-    color: #fff;
-    background: none;
+    color: var(--color);
+    background: var(--bg-color);
     border: none;
     border-radius: 4px;
-    box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px var(--border-color);
     font-family: var(--font-roboto);
     font-size: 14px;
     line-height: 29px;
@@ -57,7 +101,7 @@
 
       rect {
         fill: rgba(255,255,255,0);
-        stroke: var(--color-orange);
+        stroke: var(--rect-stroke);
         stroke-width: 3px;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
@@ -73,13 +117,13 @@
     }
 
     &:active {
-      background-color: rgba(0, 0, 0, .4) !important;
+      background-color: var(--bg-color-active) !important;
       transition: background-color .2s;
     }
 
     &:hover,
     &:focus {
-      background-color: rgba(0, 0, 0, .2);
+      background-color: var(--bg-color-hover);
       transition: background-color .5s;
     }
 

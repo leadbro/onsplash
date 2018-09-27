@@ -1,7 +1,5 @@
 <template>
   <div class="page-index">
-    <main-banner/>
-
     <div class="container">
       <h2 class="page-index__title">About Us</h2>
       <div class="page-index__text">
@@ -41,25 +39,12 @@
 
 <script>
 
-import MainBanner from '~/components/MainBanner'
-
-export default {
-  data() {
-    return {
-      slidesPerView: {
-        mobile: 1
-      }
-    }
-  },
-  transition: 'bounce',
-  components: {
-    MainBanner
-  },
-  fetch({store}) {
-    store.dispatch('images/getRandomImages');
+  export default {
+    transition: 'bounce'
   }
-}
+
 </script>
+
 
 <style lang="less">
 @import "../assets/mixins.less";

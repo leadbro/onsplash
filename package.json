@@ -21,7 +21,8 @@
     "lodash-es": "^4.17.11",
     "nuxt": "^2.0.0",
     "swiper": "^4.4.1",
-    "vue-lazyload": "^1.2.6"
+    "vue-lazyload": "^1.2.6",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",

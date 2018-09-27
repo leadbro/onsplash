@@ -32,7 +32,7 @@
   import throttle from 'lodash-es/throttle';
   import { mapGetters } from 'vuex';
 
-  import BannerCarousel from '~/components/AppBannerCarousel';
+  import BannerCarousel from '~/components/MainBannerCarousel';
 
   export default {
     computed: {

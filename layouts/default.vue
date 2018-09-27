@@ -105,7 +105,7 @@
 
   @keyframes bounce-in {
     0% {
-      opacity: .9
+      opacity: .4
     }
     100% {
       opacity: 1
@@ -113,6 +113,6 @@
   }
   @keyframes bounce-out {
     0% {  opacity: 1 }
-    100% { opacity: .9 }
+    100% { opacity: 0 }
   }
 </style>

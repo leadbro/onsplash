@@ -41,11 +41,6 @@
 
     &__menu {
       margin-left: auto;
-      display: none;
-
-      @media @min768 {
-        display: block;
-      }
     }
 
     &__icon {
