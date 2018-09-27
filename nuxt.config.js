@@ -23,7 +23,7 @@ module.exports = {
     ]
   },
   router: {
-    base: '/<repository-name>/'
+    base: '/onsplash/'
   },
 
   /*
