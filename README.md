@@ -1,6 +1,6 @@
-# softex-lab
+# Onsplash
 
-> Test task
+> Softex Lab test task
 
 ## Build Setup
 
