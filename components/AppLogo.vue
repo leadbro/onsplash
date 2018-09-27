@@ -6,16 +6,6 @@
   </div>
 </template>
 
-<script>
-  import LogoIcon from '~/components/AppLogoIcon';
-
-  export default {
-    components: {
-      LogoIcon
-    }
-  }
-</script>
-
 <style lang="less">
   @import "../assets/mixins.less";
 

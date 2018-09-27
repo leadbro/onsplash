@@ -10,14 +10,12 @@
 
 <script>
   import AppHeader from '~/components/AppHeader';
-  import LogoIcon from '~/components/AppLogoIcon';
 
 
   export default {
 
     components: {
       AppHeader,
-      LogoIcon
     }
   }
 

@@ -15,7 +15,7 @@
       </div>
 
       <base-button class="banner__button" @click.native="onButtonClick">
-        Randomize
+        Refresh
       </base-button>
 
       <banner-carousel
@@ -33,7 +33,6 @@
   import { mapGetters } from 'vuex';
 
   import BannerCarousel from '~/components/AppBannerCarousel';
-  import BaseButton from '~/components/BaseButton';
 
   export default {
     computed: {
@@ -50,7 +49,6 @@
     },
     components: {
       BannerCarousel,
-      BaseButton
     }
   }
 </script>
